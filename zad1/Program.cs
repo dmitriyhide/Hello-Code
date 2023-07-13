@@ -12,7 +12,7 @@ Console.WriteLine("Введите два числа: ");
 int num1 = Int32.Parse(Console.ReadLine());
 int num2 = Int32.Parse(Console.ReadLine());
 
-if(num1 > num2)
+if (num1 > num2)
 {
     max = num1;
 }

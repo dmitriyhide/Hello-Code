@@ -5,16 +5,26 @@
 // 5 -> 2,4
 // 8 -> 2,4,6,8
 
+// Console.Write("Введите число: ");
+// int number = Convert.ToInt32(Console.ReadLine());
+
+// int n = 2;
+
+// if (number > 1)
+// {
+//     while (n <= number)
+//     {
+//         Console.WriteLine(n + " ");
+//         n = n + 2;
+//     }
+// }
+
+// или
+
 Console.Write("Введите число: ");
-int number = Convert.ToInt32(Console.ReadLine());
+int n = Convert.ToInt32(Console.ReadLine());
 
-int N = 2;
-
-if(number > 1)
+for (int i = 2; i <= n; i += 2)
 {
-    while(N <= number)
-    {
-        Console.Write(N + " ");
-        N = N + 2;
-    }
+    Console.Write(i + " ");
 }

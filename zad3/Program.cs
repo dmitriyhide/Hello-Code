@@ -6,12 +6,12 @@
 // -3 -> нет
 // 7 -> нет
 
-Console.Write("Введите число: ");
+Console.WriteLine("Введите число: ");
 int number = Convert.ToInt32(Console.ReadLine());
-
-if (number % 2 == 0)
+// если один раз то можно без переменной, или int a = number % 2
+if (number % 2 == 0) // a == 0
 {
-    Console.WriteLine("чётное");
+    Console.WriteLine("чётное"); 
 }
 else
 {
