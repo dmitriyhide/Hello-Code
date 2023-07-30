@@ -3,32 +3,44 @@
 // [3, 7, 23, 12] -> 19
 // [-4, -6, 89, 6] -> 0
 
-int num = 4;
-int[] nums = new int[num];
-FillArrayRandomNumbers(nums);
-PrintArray(nums);
+int[] array = new int[10];
 
-int sum = 0;
-
-for (int i = 1; i < nums.Length; i += 2)
+void Fill(int[] numbers)
 {
-    sum += nums[i];
-}
-Console.Write(sum);
-
-void FillArrayRandomNumbers(int[] array)
-{
-    for (int i = 0; i < array.Length; i++)
+    int n = numbers.Length;
+    int i = 0;
+    while (i < n)
     {
-        array[i] = new Random().Next(-100, 101);
+        numbers[i] = new Random().Next(50);
+        i++;
     }
 }
 
-void PrintArray(int[] array)
+void Print(int[] nums)
 {
-    for (int i = 0; i < array.Length; i++)
+    int n = nums.Length;
+    int i = 0;
+    while (i < n)
     {
-        Console.Write(array[i] + " ");
+        Console.Write(nums[i] + " ");
+        i++;
     }
-    Console.WriteLine();
 }
+
+void sum()
+{
+    int n = args.Length;
+    int i = 0;
+    int summa = 0;
+    while (i < n)
+    {
+        summa += array[i];
+        i = i + 2;
+    }
+    Console.WriteLine($"Сумма элементов, стоящих на нечётных позициях: {summa}");
+}
+
+Fill(array);
+Print(array);
+Console.WriteLine();
+sum();

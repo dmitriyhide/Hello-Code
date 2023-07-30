@@ -3,31 +3,47 @@
 // которая покажет количество чётных чисел в массиве.
 // [345, 897, 568, 234] -> 2
 
-int size = 5;
-int[] numbers = new int[size];
-FillArrayRandomNumbers(numbers);
-PrintArray(numbers);
-int count = 0;
+int[] array = new int[15];
 
-for (int t = 0; t < numbers.Length; t++)
-if (numbers[t] % 2 == 0)
-count++;
-
-Console.WriteLine($"Количество чётных чисел в массиве: {count}");
-
-void FillArrayRandomNumbers(int[] numbers)
+void Fill(int[] numbers)
 {
-    for(int i = 0; i < numbers.Length; i++)
+    int n = numbers.Length;
+    int i = 0;
+    while (i < n)
     {
-        numbers[i] = new Random().Next(100,1000);
+        numbers[i] = new Random().Next(100, 1000);
+        i++;
     }
 }
-void PrintArray(int[] numbers)
+
+void Print(int[] nums)
 {
-    Console.Write(" ");
-    for(int i = 0; i < numbers.Length; i++)
+    int n = numbers.Length;
+    int i = 0;
+    while (i < n)
     {
-        Console.Write(numbers[i] + " ");
+        Console.Write(nums[i] + " ");
+        i++;
     }
-    Console.WriteLine();
 }
+
+void sum()
+{
+    int n = args.Length;
+    int i = 0;
+    int summa = 0;
+    while (i < n)
+    {
+        if (args[i] % 2 == 0)
+        {
+            summa += 1;
+        }
+        i++;
+    }
+    Console.WriteLine($"Количество чётных чисел в массиве : {summa}");
+}
+
+Fill(array);
+Print(array);
+Console.WriteLine();
+sum();
