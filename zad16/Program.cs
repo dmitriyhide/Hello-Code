@@ -2,54 +2,39 @@
 // Найдите разницу между максимальным и минимальным элементов массива.
 // [3 7 22 2 78] -> 76
 
-double[] array = new double[10];
+int[] numbers = new int[5];
+FillArrayRandomNumbers(numbers);
+PrintArray(numbers);
 
-void Fill(double[] numbers)
+int max = numbers[0];
+int min = numbers[0];
+
+for (int i = 0; i < numbers.Length; i++)
 {
-    int n = numbers.Length;
-    int i = 0;
-    while (i < n)
+    if (numbers[i] > max)
     {
-        numbers[i] = Math.Round(new Random().NextDouble() * 100, 2);
-        i++;
+        max = numbers[i];
+    }
+    else if (numbers[i] < min)
+    {
+        min = numbers[i];
     }
 }
 
-void Print(double[] nums)
+void FillArrayRandomNumbers(int[] array)
 {
-    int n = numbers.Length;
-    int i = 0;
-    while (i < n)
+    for (int i = 0; i < array.Length; i++)
     {
-        Console.Write(nums[i] + "   ");
-        i++;
+        array[i] = new Random().Next(1, 555);
     }
 }
 
-void MinMax()
+void PrintArray(int[] array)
 {
-    int i = 1;
-    int n = array.Length;
-    double min = array[0];
-    double max = array[0];
-
-    while (i < n)
+    for (int i = 0; i < array.Length; i++)
     {
-        if (array[i] > max)
-        {
-            max = array[i];
-        }
-        else if (array[i] < min)
-        {
-            min = array[i];
-        }
-        i++;
+        Console.Write(array[i] + " ");
     }
-    Console.WriteLine($"Минимальный элемент массива: {min}");
-    Console.WriteLine($"Максимальный элемент массива: {max}");
+    Console.WriteLine();
 }
-
-Fill(array);
-Print(array);
-Console.WriteLine();
-MinMax();
+Console.WriteLine($"Разница между максимальным и минимальным элементов массива: {max-min}");
